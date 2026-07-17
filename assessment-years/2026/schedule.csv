@@ -1,0 +1,7 @@
+milestone,target_date,purpose,data_rule,status
+inventory_start,2026-07-17,"Establish bridge lineage and candidate data inventory","Do not infer availability from filenames alone",active
+september_data_freeze,2026-09-TBD,"Freeze inputs for early September draft","Label every preliminary, carried-forward, or omitted component",planned
+september_draft,2026-09-TBD,"Review bridge, model set, diagnostics, and preliminary results","Use only frozen September inputs",planned
+november_data_freeze,2026-11-TBD,"Freeze final assessment inputs","Replace preliminary products and rerun affected outputs",planned
+november_final,2026-11-TBD,"Final assessment review and recommendation","Reconcile SAFE, model, projections, and review record",planned
+

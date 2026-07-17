@@ -24,6 +24,14 @@ jobs:
       - name: Set up R
         uses: r-lib/actions/setup-r@v2
 
+      - name: Install R rendering dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: |
+            any::bslib
+            any::knitr
+            any::rmarkdown
+
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 

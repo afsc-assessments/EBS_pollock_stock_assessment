@@ -1,0 +1,13 @@
+data_id,data_stream,terminal_year,candidate_location,availability_status,validation_needed,target_milestone,provenance_status,source_link
+catch_age_2025,Fishery catch at age,2025,$POLLOCK_ROOT/data/catage2025.xlsx,candidate_available,"Confirm strata, units, FT-NIRS treatment, and final accepted output",September,partial,local_only
+weight_age_2025,Fishery weight at age,2025,$POLLOCK_ROOT/data/catage2025.xlsx,candidate_available,"Confirm wtageAE and wtageFTNIR definitions and select final series",September,partial,local_only
+ftnirs_ages_2025,FT-NIRS fishery ages,2025,$POLLOCK_ROOT/data/catage2025.xlsx,candidate_available,"Document calibration, accuracy, precision, and accepted use",September,partial,local_only
+bts_index_2025,Bottom trawl survey biomass and covariance,2025,$POLLOCK_ROOT/ebswp_assessment/2025/runs/data/cov_2025.dat,candidate_available,"Confirm provider, version, units, covariance method, and final status",September,partial,local_only
+bts_age_2025,Bottom trawl survey age composition,2025,$POLLOCK_ROOT/ebswp_assessment/2025/runs/data/pm_25.dat,candidate_available,"Identify source table and verify composition extraction",September,partial,local_only
+avo_2025,AVO acoustic product,2025,$POLLOCK_ROOT/at-bt-index/data/2025/dat_all.csv,candidate_available,"Confirm official series, processing version, timing, and model input",September,partial,local_only
+assessment_input_2025,Combined provisional model input,2025,$POLLOCK_ROOT/ebswp_assessment/2025/runs/data/pm_25.dat,candidate_available,"Reconcile every embedded stream to an annual delivery",September,partial,local_only
+bts_2026,2026 bottom trawl survey products,2026,TO_CONFIRM,pending,"Await biomass, covariance, age composition, and diagnostics",September_or_November,incomplete,TO_CONFIRM
+ats_2026,2026 directed acoustic-trawl survey products,2026,TO_CONFIRM,pending,"Await biomass, age composition, timing, coverage, and diagnostics",September_or_November,incomplete,TO_CONFIRM
+avo_2026,2026 AVO acoustic product,2026,TO_CONFIRM,pending,"Confirm whether a 2026 product is expected and its delivery date",September_or_November,incomplete,TO_CONFIRM
+catch_2026,Current-year fishery catch,2026,TO_CONFIRM,pending,"Define September snapshot and November replacement date",September_and_November,incomplete,TO_CONFIRM
+environment_2026,Environmental and ecosystem indicators,2026,TO_CONFIRM,pending,"Identify required model inputs versus contextual indicators",September_or_November,incomplete,TO_CONFIRM

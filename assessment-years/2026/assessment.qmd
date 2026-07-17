@@ -1,0 +1,163 @@
+---
+title: "Assessment of walleye pollock in the eastern Bering Sea"
+subtitle: "Working draft for 2026"
+author:
+  - name: "TODO: lead assessment author"
+  - name: "TODO: coauthors"
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    embed-resources: true
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+::: {.callout-warning title="Working assessment status"}
+This draft supports an early September 2026 review and a final November 2026
+assessment. Several annual inputs are pending. Values and conclusions must not
+be carried into the executive summary until their source, review milestone, and
+validation status are recorded in the annual manifests.
+:::
+
+# Executive Summary
+
+## Summary of changes in assessment inputs
+
+The last accepted assessment was completed in 2024. No operational assessment
+was completed in 2025. The 2026 assessment will incorporate validated new data
+available for the September and November review milestones. TODO: summarize the
+final data additions and identify preliminary or unavailable components.
+
+## Changes in the data
+
+TODO: populate from `data-manifest.csv` after the September data freeze. Separate
+new fishery, BTS, ATS, AVO, FT-NIRS, and ecosystem information.
+
+## Changes in assessment methods
+
+The 2026 bridge begins from the accepted 2024 Model 23 configuration. Work
+conducted during 2025 in response to the CIE review will be introduced
+sequentially after its exact source and configuration are confirmed. TODO: list
+each method change and its effect relative to the data-only bridge.
+
+## Summary of results
+
+TODO: add results only after the candidate base model, diagnostics, and
+projections are validated.
+
+## Responses to SSC, Plan Team, and CIE comments
+
+TODO: separate CIE responses, recurring general comments, and stock-specific
+Plan Team or SSC comments. Link every response to evidence.
+
+# Introduction
+
+TODO: update only material that changed since the 2024 accepted assessment and
+cite that assessment for stable background.
+
+# Fishery and Management History
+
+TODO: update catch, ABC, TAC, OFL, fishery distribution, and bycatch through the
+confirmed terminal years.
+
+# Data
+
+## Data readiness
+
+The current inventory is maintained in `data-manifest.csv`. Candidate files are
+not final inputs until their provider, version, units, processing, and review
+status are confirmed.
+
+## Fishery data and FT-NIRS ages
+
+TODO: document catch-at-age, weight-at-age, sampling, strata, and the treatment
+and validation of FT-NIRS ages.
+
+# Survey Data
+
+TODO: document BTS, directed acoustic-trawl, and AVO delivery versions, survey
+timing, coverage, uncertainty, age compositions, and processing changes.
+
+# Other Data
+
+TODO: distinguish contextual ecosystem information from data entering the model
+likelihood or projections.
+
+# Analytic Approach
+
+## Bridge models
+
+The bridge sequence is: 2024 reproduction; September 2025 post-CIE development
+reconstruction; 2026 data-only update; and sequential addition of approved
+method changes. TODO: report objective values and key outputs at every step.
+
+## Candidate base model and alternatives
+
+TODO: define the September and November candidate models and the rationale for
+each alternative.
+
+# Results
+
+TODO: add estimates, data fits, convergence checks, profiles, retrospectives,
+MCMC diagnostics, and model comparisons.
+
+# Projections and Harvest Recommendations
+
+TODO: document the terminal-state export, weight-at-age treatment, recruitment
+assumptions, standard scenarios, OFL, maximum permissible ABC, and recommended
+ABC.
+
+# Risk Table and ABC Recommendation
+
+TODO: complete after the evidence and projection results are final.
+
+# Area Allocation of ABC
+
+TODO: report the applicable method or state why this section is not applicable.
+
+# Status Determination
+
+TODO: report overfishing, overfished, and approaching-overfished determinations.
+
+# Flimit
+
+TODO: complete according to the 2026 guideline requirement.
+
+# Ecosystem Considerations
+
+TODO: summarize decision-relevant ecosystem information without conflating
+contextual evidence with model inputs.
+
+# Data Gaps and Research Priorities
+
+TODO: update from the CIE review and subsequent work.
+
+# Acknowledgements
+
+TODO.
+
+# Literature Cited
+
+TODO: connect the assessment bibliography.
+
+# Auxiliary Files
+
+TODO: link the final data, model, projection, diagnostics, and review bundles.
+
+# Tables
+
+TODO: generate from versioned machine-readable outputs.
+
+# Figures
+
+TODO: generate from versioned machine-readable outputs and provide alt text.
+
+# Appendices and Working Papers
+
+TODO: link post-CIE working papers and detailed reproducibility material.
+

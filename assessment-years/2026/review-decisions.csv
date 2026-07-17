@@ -1,0 +1,9 @@
+decision_id,stage,decision,owner,evidence,status
+cie_response_scope,author_preparation,"Confirm the CIE recommendations and the September 2025 responses that enter the 2026 bridge",assessment_authors,TO_CONFIRM,incomplete
+september_model_set,september_review,"Approve bridge sequence and model set for the September draft",assessment_authors_and_reviewers,TO_CONFIRM,planned
+september_data_cut,september_review,"Record which products are preliminary, carried forward, excluded, or final",assessment_authors,assessment-years/2026/data-manifest.csv,planned
+november_data_cut,november_review,"Replace preliminary inputs and record final delivery versions",assessment_authors,assessment-years/2026/data-manifest.csv,planned
+author_recommendation,author_final,"Select the author-recommended model and ABC",assessment_authors,TO_CONFIRM,not_started
+plan_team_recommendation,plan_team_final,"Record Plan Team model and harvest recommendation",BSAI_Groundfish_Plan_Team,TO_CONFIRM,not_started
+ssc_recommendation,ssc_final,"Record SSC model and harvest recommendation",NPFMC_SSC,TO_CONFIRM,not_started
+

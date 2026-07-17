@@ -1,0 +1,44 @@
+---
+title: "2026 EBS pollock assessment workspace"
+subtitle: "Data readiness, bridge lineage, and review schedule"
+---
+
+## Status
+
+The 2026 assessment is in data assembly and bridge-definition phase. The data
+inventory was last reviewed on July 17, 2026.
+
+There was no operational assessment in 2025. The accepted assessment anchor is
+therefore the 2024 Model 23 assessment. Work conducted during 2025 in response
+to the CIE review is a development bridge, not an accepted 2025 assessment.
+
+## Review milestones
+
+| Milestone | Timing | Data treatment |
+|---|---|---|
+| Draft review | Early September 2026 | Freeze a documented set; label preliminary and missing products |
+| Final review | November 2026 | Replace preliminary deliveries and rerun affected analyses |
+
+Exact review and freeze dates remain to be confirmed.
+
+## Data currently located
+
+Candidate local products have been found for 2025 fishery catch and weight at
+age, FT-NIRS ages, the 2025 bottom-trawl covariance/index, a combined model input,
+and AVO processing. These are not considered final merely because files exist.
+Each still requires ownership, version, units, processing, and suitability checks.
+
+The 2026 survey products and current-year catch snapshots remain pending or need
+their delivery dates confirmed.
+
+See the [assessment dashboard](dashboard.qmd), [working SAFE draft](assessment.qmd),
+[`data-manifest.csv`](data-manifest.csv), and
+[`run-manifest.csv`](run-manifest.csv).
+
+## Bridge logic
+
+1. reproduce the accepted 2024 assessment;
+2. reconstruct and enumerate the September 2025 post-CIE changes;
+3. update the unchanged 2024 model with confirmed new data;
+4. add approved method changes sequentially;
+5. select the September candidate and repeat the data update for November.

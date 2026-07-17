@@ -1,0 +1,10 @@
+run_id,role,parent_run,data_change,method_change,review_use,author_status,source_link
+bridge_2024,reproduction,none,None,None,"Reproduce accepted 2024 results",planned,https://github.com/afsc-assessments/ebs_pollock_safe/tree/41dc244ade54692282b1ac530b76757d4687fd37/2024/runs/m23
+bridge_2025_cie,development_bridge,bridge_2024,None,"September 2025 post-CIE changes; enumerate after source confirmation","Establish development lineage only; not 2025 advice",planned,TO_CONFIRM
+bridge_2026_data,data_bridge,bridge_2024,"All validated new data available for the review milestone",None,"Separate data effects from method effects",planned,$POLLOCK_ROOT/ebswp_assessment/2025/runs/base
+base_2026,candidate_base,bridge_2026_data,"Same confirmed annual data as bridge_2026_data","Approved 2025 development changes added sequentially",September candidate,planned,TO_CONFIRM
+base_2026_nov,final_candidate,base_2026,"Replace preliminary inputs with final deliveries",Only review-approved changes,November candidate,planned,TO_CONFIRM
+retro_2026,retrospective,base_2026_nov,None,None,Diagnostic,planned,TO_CONFIRM
+profile_2026,profile,base_2026_nov,None,None,Diagnostic,planned,TO_CONFIRM
+mcmc_2026,mcmc,base_2026_nov,None,None,Diagnostic,planned,TO_CONFIRM
+projection_2026,projection,base_2026_nov,"Validated terminal assessment state",Projection assumptions to document,"OFL, maximum ABC, and scenarios",planned,TO_CONFIRM

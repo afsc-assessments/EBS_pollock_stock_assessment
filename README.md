@@ -19,6 +19,10 @@ This is currently a local development repository and has not been published. The
 or independently reproduced assessment. Entries marked `TO_CONFIRM`, `missing`,
 or `incomplete` identify information that still requires an authoritative source.
 
+The [2026 dashboard](assessment-years/2026/dashboard.qmd) is generated directly
+from the annual CSV records and summarizes schedule, data readiness, bridge
+progress, open decisions, and deliverable status.
+
 ## What this example demonstrates
 
 - an assessment-year directory rather than a year in the repository name;

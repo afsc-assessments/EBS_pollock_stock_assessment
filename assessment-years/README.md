@@ -34,6 +34,12 @@ Use explicit states rather than relying on directory names:
 - `missing`: expected but absent from the identified archive;
 - `incomplete`: metadata or review evidence still needs completion.
 
+For incoming data, use `candidate_available` when a plausible file has been
+located but its contents, ownership, or suitability have not been confirmed;
+`pending` when the annual product has not been delivered; `validated` when the
+product has passed the recorded checks; and `superseded` when a newer delivery
+replaces it.
+
 ## Annual release rule
 
 An assessment year should not be tagged as final until:
@@ -50,4 +56,3 @@ An assessment year should not be tagged as final until:
 Multiple milestones in one year should use descriptive tags such as
 `2024-author`, `2024-plan-team`, and `2024-final`, with correction tags such as
 `2024-final.1` when needed.
-

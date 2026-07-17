@@ -1,0 +1,236 @@
+---
+title: "2026 EBS pollock assessment dashboard"
+subtitle: "Schedule, data readiness, bridge progress, and review status"
+format:
+  dashboard:
+    theme: cosmo
+    orientation: rows
+    scrolling: true
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+candidate_dirs <- c(".", file.path("assessment-years", "2026"))
+year_dir <- candidate_dirs[
+  file.exists(file.path(candidate_dirs, "data-manifest.csv"))
+][1]
+
+if (is.na(year_dir)) {
+  stop("Could not locate the 2026 assessment manifests.")
+}
+
+read_manifest <- function(filename) {
+  read.csv(
+    file.path(year_dir, filename),
+    check.names = FALSE,
+    stringsAsFactors = FALSE,
+    na.strings = c("", "NA")
+  )
+}
+
+data_manifest <- read_manifest("data-manifest.csv")
+run_manifest <- read_manifest("run-manifest.csv")
+review_manifest <- read_manifest("review-decisions.csv")
+deliverables <- read_manifest("deliverables.csv")
+schedule <- read_manifest("schedule.csv")
+
+candidate_data <- sum(data_manifest$availability_status == "candidate_available")
+pending_data <- sum(data_manifest$availability_status == "pending")
+validated_data <- sum(data_manifest$availability_status == "validated")
+open_decisions <- sum(!review_manifest$status %in% c("complete", "final", "ssc_accepted"))
+
+status_order <- c(
+  "validated", "candidate_available", "active", "working", "planned",
+  "pending", "incomplete", "missing", "not_started"
+)
+status_colors <- c(
+  validated = "#2b8c4b",
+  candidate_available = "#d99a00",
+  active = "#2171b5",
+  working = "#2171b5",
+  planned = "#6b7280",
+  pending = "#d97706",
+  incomplete = "#b45309",
+  missing = "#b91c1c",
+  not_started = "#6b7280"
+)
+
+format_table <- function(x, columns, labels = columns) {
+  out <- x[, columns, drop = FALSE]
+  names(out) <- labels
+  knitr::kable(out, format = "html", escape = TRUE, row.names = FALSE)
+}
+```
+
+## Current position
+
+::: {.callout-note}
+The inventory is current as of **July 17, 2026**. A file marked *candidate
+available* has been located but is not a final assessment input until its owner,
+version, units, processing, and suitability have been confirmed.
+:::
+
+### Row
+
+```{r}
+#| content: valuebox
+#| title: "Candidate data products"
+
+list(icon = "database-check", color = "warning", value = candidate_data)
+```
+
+```{r}
+#| content: valuebox
+#| title: "Validated data products"
+
+list(icon = "check-circle", color = "success", value = validated_data)
+```
+
+```{r}
+#| content: valuebox
+#| title: "Pending data products"
+
+list(icon = "hourglass-split", color = "secondary", value = pending_data)
+```
+
+```{r}
+#| content: valuebox
+#| title: "Open decisions"
+
+list(icon = "question-circle", color = "danger", value = open_decisions)
+```
+
+## Schedule
+
+### Row
+
+```{r}
+format_table(
+  schedule,
+  c("milestone", "target_date", "purpose", "status"),
+  c("Milestone", "Target", "Purpose", "Status")
+)
+```
+
+## Data readiness
+
+### Row {height=35%}
+
+```{r}
+#| title: "Products by availability status"
+#| fig-alt: "Bar chart counting 2026 assessment data products by availability status."
+
+data_counts <- table(data_manifest$availability_status)
+data_counts <- data_counts[order(match(names(data_counts), status_order))]
+barplot(
+  data_counts,
+  horiz = TRUE,
+  las = 1,
+  col = unname(status_colors[names(data_counts)]),
+  border = NA,
+  xlab = "Number of data products",
+  main = "Data readiness"
+)
+```
+
+```{r}
+#| title: "Products still needing action"
+
+data_actions <- data_manifest[
+  data_manifest$availability_status != "validated",
+  c("data_stream", "terminal_year", "availability_status", "validation_needed", "target_milestone")
+]
+format_table(
+  data_actions,
+  names(data_actions),
+  c("Data stream", "Terminal year", "Status", "Next check", "Target")
+)
+```
+
+## Bridge and model runs
+
+### Row
+
+```{r}
+format_table(
+  run_manifest,
+  c("run_id", "role", "parent_run", "review_use", "author_status"),
+  c("Run", "Role", "Parent", "Purpose", "Status")
+)
+```
+
+::: {.callout-warning title="Unresolved bridge source"}
+The exact September 2025 post-CIE draft and model configuration still need to be
+identified. The 2024 September document is not an acceptable substitute.
+:::
+
+## Decisions and review
+
+### Row
+
+```{r}
+review_actions <- review_manifest[
+  !review_manifest$status %in% c("complete", "final", "ssc_accepted"),
+  c("stage", "decision", "owner", "status")
+]
+format_table(
+  review_actions,
+  names(review_actions),
+  c("Stage", "Decision needed", "Owner", "Status")
+)
+```
+
+## Deliverables
+
+### Row {height=35%}
+
+```{r}
+#| title: "Deliverables by status"
+#| fig-alt: "Bar chart counting 2026 assessment deliverables by status."
+
+deliverable_counts <- table(deliverables$status)
+deliverable_counts <- deliverable_counts[
+  order(match(names(deliverable_counts), status_order))
+]
+barplot(
+  deliverable_counts,
+  horiz = TRUE,
+  las = 1,
+  col = unname(status_colors[names(deliverable_counts)]),
+  border = NA,
+  xlab = "Number of deliverables",
+  main = "Deliverable status"
+)
+```
+
+```{r}
+format_table(
+  deliverables,
+  c("description", "validation", "status"),
+  c("Deliverable", "Required check", "Status")
+)
+```
+
+## Update instructions
+
+Edit the source records in this directory:
+
+- `schedule.csv` for dates and milestones;
+- `data-manifest.csv` for deliveries and validation;
+- `run-manifest.csv` for bridge and model progress;
+- `review-decisions.csv` for decisions and dispositions; and
+- `deliverables.csv` for document and output readiness.
+
+Then run:
+
+```sh
+Rscript scripts/validate_manifests.R
+quarto render
+```
+

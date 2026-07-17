@@ -1,0 +1,9 @@
+deliverable_id,description,source,validation,status
+september_safe,Draft assessment for early September review,assessment-years/2026/assessment.qmd,"Render, reconcile values, and label preliminary inputs",working
+november_safe,Final November assessment,assessment-years/2026/assessment.qmd,"Render, reconcile values, and verify replacements",not_started
+bridge_evidence,2024 reproduction and 2025 development bridge outputs,TO_CONFIRM,"Objective and key-output reconciliation",planned
+data_bundle,Versioned annual model inputs,TO_CONFIRM,"Manifest, units, totals, and checksum review",working
+model_bundle,Base alternatives and diagnostic outputs,TO_CONFIRM,"Convergence and diagnostic checklist",planned
+projection_bundle,Projection inputs outputs and scenario summaries,TO_CONFIRM,"Independent OFL and ABC check",planned
+review_record,CIE September Plan Team and SSC dispositions,TO_CONFIRM,"Match comments to actions and evidence",incomplete
+

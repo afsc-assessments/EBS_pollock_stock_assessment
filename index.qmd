@@ -1,13 +1,29 @@
 ---
-title: "EBS pollock 2024: stock-assessment repository example"
-subtitle: "An Alaska groundfish adaptation of the NMFS-OST assessment template"
+title: "Eastern Bering Sea pollock stock assessment"
+subtitle: "Annual assessment workspace"
 format:
   html:
     toc: true
     embed-resources: true
 ---
 
-## Purpose
+## Current assessment
+
+The [2026 assessment workspace](assessment-years/2026/index.qmd) is now active.
+The working schedule is an early September 2026 draft followed by the final
+assessment in November 2026. There was no operational assessment in 2025.
+
+The 2026 bridge therefore has two documented anchors:
+
+1. the accepted 2024 assessment; and
+2. methodological work conducted during 2025 in response to the CIE review and
+   related September drafts.
+
+New data are incorporated only after delivery and validation. The 2026 data
+inventory distinguishes candidate files already located on disk from pending
+survey and annual products.
+
+## 2024 framework example
 
 This compact example shows how a real Alaska groundfish assessment can be
 represented with explicit annual provenance, model-run roles, review decisions,
@@ -61,4 +77,3 @@ useful, but an operational Alaska example also needs:
 - Plan Team and SSC decision records;
 - separate handling of restricted data and shareable metadata;
 - release validation for the values entering the SAFE.
-
