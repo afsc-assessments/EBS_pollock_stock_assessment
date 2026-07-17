@@ -3,7 +3,7 @@
 .Rproj.user/
 .quarto/
 _freeze/
-report/_site/
+_site/
 uncommitted/
 restricted-data/
 *.env

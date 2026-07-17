@@ -46,7 +46,7 @@ assessment-years/2024/
   run-manifest.csv         role and status of each model configuration
   review-decisions.csv     author, Plan Team, and SSC decisions
   deliverables.csv         final documents and machine-readable products
-report/                    compact annual summary
+index.qmd                  website homepage and compact annual summary
 scripts/                   validation and workflow entry points
 ```
 
@@ -54,11 +54,14 @@ scripts/                   validation and workflow entry points
 
 ```sh
 Rscript scripts/validate_manifests.R
-quarto render report/index.qmd
+quarto render
 ```
 
 The first command uses base R only. The report is deliberately static so the
 example can render without assessment packages or confidential inputs.
+
+On `main`, GitHub Actions runs the same validation, renders the Quarto project,
+and deploys `_site/` to GitHub Pages.
 
 ## Reproducing the actual assessment
 
