@@ -1,0 +1,43 @@
+assessment:
+  region: Alaska
+  management_area: Bering Sea and Aleutian Islands
+  stock: Eastern Bering Sea pollock
+  year: 2026
+  assessment_type: operational full assessment
+  assessment_type_status: working designation; confirm against 2026 schedule
+  last_accepted_assessment_year: 2024
+  no_operational_assessment_in: 2025
+  working_status: data assembly and bridge definition
+  inventory_as_of: 2026-07-17
+
+lineage:
+  accepted_anchor: 2024 Model 23 assessment
+  development_anchor: September 2025 post-CIE work
+  development_anchor_status: exact source document and configuration to confirm
+  rule: never describe 2025 development as an accepted 2025 assessment
+
+schedule:
+  september_draft: early September 2026; exact date to confirm
+  november_final: November 2026; exact date to confirm
+
+software:
+  assessment_model: ADMB Model 23 lineage
+  assessment_orchestration: ebswp R package and annual driver scripts
+  report_system: Quarto
+  dependency_lock: pending
+
+entry_points:
+  build_model: pending confirmation
+  build_inputs: pending confirmation
+  run_bridge: pending confirmation
+  run_projections: pending confirmation
+  render_safe: quarto render assessment-years/2026/assessment.qmd
+  validate_manifests: Rscript scripts/validate_manifests.R
+
+release:
+  author_status: working
+  september_review_status: planned
+  plan_team_status: not_started
+  ssc_status: not_started
+  final_status: not_started
+

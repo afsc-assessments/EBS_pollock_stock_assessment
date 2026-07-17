@@ -4,6 +4,16 @@ project:
 
 website:
   title: "EBS pollock stock assessment"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: assessment-years/2026/index.qmd
+        text: 2026 overview
+      - href: assessment-years/2026/dashboard.qmd
+        text: 2026 dashboard
+      - href: assessment-years/2026/assessment.qmd
+        text: 2026 SAFE draft
 
 format:
   html:
