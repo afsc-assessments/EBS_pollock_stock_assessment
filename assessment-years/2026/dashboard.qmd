@@ -68,33 +68,42 @@ format_table <- function(x, columns, labels = columns) {
 }
 ```
 
-## Current position
+## How to use this dashboard {height=230}
+
+### What this page shows
 
 ::: {.callout-note}
-The inventory is current as of **July 17, 2026**. A file marked *candidate
-available* has been located but is not a final assessment input until its owner,
-version, units, processing, and suitability have been confirmed.
+This is a **read-only summary** of five CSV tracking files in this assessment-year
+folder. Edit those files—not the boxes or tables on this page—and the dashboard
+updates the next time Quarto renders the project.
+
+The inventory is current as of **July 17, 2026**. **Located; needs checking**
+means a possible input file has been found, but its owner, version, units,
+processing, and suitability still need confirmation. **Ready for assessment use**
+means those checks are complete. **Awaiting delivery** means the expected input
+has not yet been received. **Open decisions** are unresolved choices recorded in
+the review tracker.
 :::
 
-### Row
+## Assessment status {height=180}
 
 ```{r}
 #| content: valuebox
-#| title: "Candidate data products"
+#| title: "Located; needs checking"
 
 list(icon = "database-check", color = "warning", value = candidate_data)
 ```
 
 ```{r}
 #| content: valuebox
-#| title: "Validated data products"
+#| title: "Ready for assessment use"
 
 list(icon = "check-circle", color = "success", value = validated_data)
 ```
 
 ```{r}
 #| content: valuebox
-#| title: "Pending data products"
+#| title: "Awaiting delivery"
 
 list(icon = "hourglass-split", color = "secondary", value = pending_data)
 ```
@@ -106,9 +115,9 @@ list(icon = "hourglass-split", color = "secondary", value = pending_data)
 list(icon = "question-circle", color = "danger", value = open_decisions)
 ```
 
-## Schedule
+## Schedule {height=350}
 
-### Row
+### Review and delivery milestones
 
 ```{r}
 format_table(
@@ -118,12 +127,11 @@ format_table(
 )
 ```
 
-## Data readiness
+## Data readiness {height=500}
 
-### Row {height=35%}
+### Status summary
 
 ```{r}
-#| title: "Products by availability status"
 #| fig-alt: "Bar chart counting 2026 assessment data products by availability status."
 
 data_counts <- table(data_manifest$availability_status)
@@ -139,9 +147,9 @@ barplot(
 )
 ```
 
-```{r}
-#| title: "Products still needing action"
+### Items needing action
 
+```{r}
 data_actions <- data_manifest[
   data_manifest$availability_status != "validated",
   c("data_stream", "terminal_year", "availability_status", "validation_needed", "target_milestone")
@@ -153,9 +161,9 @@ format_table(
 )
 ```
 
-## Bridge and model runs
+## Bridge and model runs {height=420}
 
-### Row
+### Planned run sequence
 
 ```{r}
 format_table(
@@ -165,14 +173,16 @@ format_table(
 )
 ```
 
+### Important gap
+
 ::: {.callout-warning title="Unresolved bridge source"}
 The exact September 2025 post-CIE draft and model configuration still need to be
 identified. The 2024 September document is not an acceptable substitute.
 :::
 
-## Decisions and review
+## Decisions and review {height=350}
 
-### Row
+### Choices that still need an owner or resolution
 
 ```{r}
 review_actions <- review_manifest[
@@ -186,12 +196,11 @@ format_table(
 )
 ```
 
-## Deliverables
+## Deliverables {height=450}
 
-### Row {height=35%}
+### Status summary
 
 ```{r}
-#| title: "Deliverables by status"
 #| fig-alt: "Bar chart counting 2026 assessment deliverables by status."
 
 deliverable_counts <- table(deliverables$status)
@@ -209,6 +218,8 @@ barplot(
 )
 ```
 
+### Required outputs and checks
+
 ```{r}
 format_table(
   deliverables,
@@ -217,9 +228,11 @@ format_table(
 )
 ```
 
-## Update instructions
+## Updating the dashboard {height=360}
 
-Edit the source records in this directory:
+### Source files and rebuild commands
+
+Edit the source records in `assessment-years/2026/`:
 
 - `schedule.csv` for dates and milestones;
 - `data-manifest.csv` for deliveries and validation;
@@ -227,10 +240,10 @@ Edit the source records in this directory:
 - `review-decisions.csv` for decisions and dispositions; and
 - `deliverables.csv` for document and output readiness.
 
-Then run:
+Commit and push the changes. GitHub Actions validates the records and renders the
+site automatically. To check the same changes locally before pushing, run:
 
 ```sh
 Rscript scripts/validate_manifests.R
 quarto render
 ```
-
