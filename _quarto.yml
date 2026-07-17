@@ -1,0 +1,12 @@
+project:
+  type: website
+  output-dir: report/_site
+
+website:
+  title: "EBS pollock 2024 workflow example"
+
+format:
+  html:
+    toc: true
+    embed-resources: true
+

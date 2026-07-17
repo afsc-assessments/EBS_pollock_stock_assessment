@@ -1,0 +1,8 @@
+deliverable_id,description,source,validation,archive,status
+safe_source,Main Quarto SAFE source,ebswp.qmd,Render and reconcile values,authoritative repository,available
+safe_render,Rendered 2024 assessment,docs/index.pdf,Visual and scientific review,authoritative repository,missing
+model_input,Model 23 linked input,2024/runs/m23/pm.dat,Checksum and data reconciliation,authoritative repository,available
+model_output,Model 23 assessment output,2024/runs/m23/pm.rep,Convergence and output checks,authoritative repository,missing
+projection_output,Tier 3 projections,2024/runs/m23/proj/spm_summary.csv,Independent OFL and ABC check,authoritative repository,available
+diagnostics,Retrospective profile and MCMC evidence,2024/runs/m23,Diagnostic acceptance checklist,authoritative repository,partial
+review_record,Plan Team and SSC dispositions,external review records,Confirm decisions against minutes,TO_CONFIRM,incomplete

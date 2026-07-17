@@ -1,0 +1,6 @@
+decision_id,stage,date,body,subject,decision,evidence_link,status
+author-model,author_recommendation,TO_CONFIRM,assessment_authors,2024 model configuration,Model 23 recommended,https://github.com/afsc-assessments/ebs_pollock_safe/blob/41dc244ade54692282b1ac530b76757d4687fd37/ebswp.qmd,documented
+september-review,plan_team_preview,2024-09,NPFMC BSAI Groundfish Plan Team,Model and sensitivity preview,Link review minutes and dispositions,https://www.npfmc.org/library/safe-reports/2024/EBSpollock_sept.pdf,incomplete
+november-review,plan_team_final,TO_CONFIRM,NPFMC BSAI Groundfish Plan Team,Final model and harvest recommendation,TO_CONFIRM,TO_CONFIRM,missing
+ssc-review,ssc_final,TO_CONFIRM,NPFMC Scientific and Statistical Committee,Model OFL and ABC review,TO_CONFIRM,TO_CONFIRM,missing
+

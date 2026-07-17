@@ -1,0 +1,64 @@
+---
+title: "EBS pollock 2024: stock-assessment repository example"
+subtitle: "An Alaska groundfish adaptation of the NMFS-OST assessment template"
+format:
+  html:
+    toc: true
+    embed-resources: true
+---
+
+## Purpose
+
+This compact example shows how a real Alaska groundfish assessment can be
+represented with explicit annual provenance, model-run roles, review decisions,
+and final deliverables. It is based on the committed 2024 EBS pollock assessment
+at [`41dc244`](https://github.com/afsc-assessments/ebs_pollock_safe/commit/41dc244ade54692282b1ac530b76757d4687fd37).
+
+## Annual model sequence
+
+| Run | Role | Change from parent | Status |
+|---|---|---|---|
+| `m23.ly` | Bridge | Prior Model 23 with prior-year data | Comparison |
+| `m23` | Updated base | Adds new AVO, BTS, ATS, catch, and fishery-age data | Author-recommended |
+| `m1` | Data withholding | Excludes new BTS age and biomass inputs | Comparison |
+| `m2` | Data withholding | Additionally excludes new ATS inputs | Comparison |
+| `m3` | Data withholding | Additionally excludes new AVO input | Comparison |
+
+The full assessment states that the sequential survey-data exclusions produced
+relatively minor spawning-biomass changes and associates the principal change
+from the 2023 result with the updated 2023 fishery catch-at-age information.
+
+## Supporting diagnostics
+
+The Model 23 directory contains separate retrospective, likelihood-profile, and
+MCMC workflows. The assessment reports a maximum gradient below `1e-3`, R-hat
+below 1.01, and effective sample sizes above 400 for key parameters. A production
+release should link each reported diagnostic to the exact output and record a
+reviewer, date, and pass/fail decision.
+
+## Projection connection
+
+Model 23 has a separate `proj/` directory containing projection inputs and
+machine-readable summaries. The deliverables manifest identifies the expected
+connection between the terminal assessment state, Tier 3 projections, and the
+OFL/ABC values reported in the SAFE.
+
+## Deliberately visible gaps
+
+`TO_CONFIRM` and `incomplete` entries are retained where the public assessment
+snapshot does not establish an authoritative owner, upstream delivery identifier,
+redistribution decision, or final review disposition. Making these gaps visible
+is preferable to inferring provenance during succession.
+
+## Why this extends the generic template
+
+The generic `R/`, `data-raw/`, `data/`, `scripts/`, and `report/` structure is
+useful, but an operational Alaska example also needs:
+
+- annual model and data manifests;
+- explicit bridge and alternative-model relationships;
+- assessment-to-projection traceability;
+- Plan Team and SSC decision records;
+- separate handling of restricted data and shareable metadata;
+- release validation for the values entering the SAFE.
+

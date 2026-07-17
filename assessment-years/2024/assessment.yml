@@ -1,0 +1,38 @@
+assessment:
+  region: Alaska
+  management_area: Bering Sea and Aleutian Islands
+  stock: Eastern Bering Sea pollock
+  year: 2024
+  assessment_type: full assessment
+  final_model: Model 23
+  final_run_directory: 2024/runs/m23
+  source_repository: https://github.com/afsc-assessments/ebs_pollock_safe
+  source_commit: 41dc244ade54692282b1ac530b76757d4687fd37
+  source_commit_date: 2025-09-26
+  source_note: Committed snapshot used because the local checkout contained unrelated uncommitted changes.
+
+software:
+  assessment_model: ADMB
+  assessment_orchestration: R/pm24.R and the ebswp R package
+  report_system: Quarto
+  dependency_lock: not present in the source commit
+  automated_ci: not present in the source commit
+
+entry_points:
+  build_model: make -C source
+  load_results: Rscript R/pm24.R
+  render_safe: quarto render ebswp.qmd
+  validate_example: Rscript scripts/validate_manifests.R
+
+reported_diagnostics:
+  maximum_gradient: "< 1e-3"
+  mcmc_rhat: "< 1.01"
+  mcmc_effective_sample_size: "> 400"
+  verification_status: reported in SAFE; not rerun for this compact example
+
+release:
+  author_status: recommended
+  plan_team_status: not documented in this compact example
+  ssc_status: not documented in this compact example
+  release_tag: not identified at the inspected source commit
+

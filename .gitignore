@@ -1,0 +1,12 @@
+.Rhistory
+.RData
+.Rproj.user/
+.quarto/
+_freeze/
+report/_site/
+uncommitted/
+restricted-data/
+*.env
+**/*.quarto_ipynb
+
+/.quarto/

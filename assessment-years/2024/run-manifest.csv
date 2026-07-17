@@ -1,0 +1,10 @@
+run_id,role,description,parent_run,data_change,configuration_change,projection_directory,author_status,source_link
+m23.ly,bridge,Prior accepted Model 23 with prior-year data,none,Prior-year data,none,not_identified,comparison,https://github.com/afsc-assessments/ebs_pollock_safe/tree/41dc244ade54692282b1ac530b76757d4687fd37/2024/runs/lastyr
+m23,base,Model 23 updated with AVO BTS ATS fishery catch and 2023 fishery age composition,m23.ly,All new annual data,none,2024/runs/m23/proj,recommended,https://github.com/afsc-assessments/ebs_pollock_safe/tree/41dc244ade54692282b1ac530b76757d4687fd37/2024/runs/m23
+m1,data_withholding,Model 23 update excluding new BTS age and biomass data,m23,Exclude new BTS,none,2024/runs/m1/proj,comparison,https://github.com/afsc-assessments/ebs_pollock_safe/tree/41dc244ade54692282b1ac530b76757d4687fd37/2024/runs/m1
+m2,data_withholding,m1 additionally excluding new ATS age and biomass data,m1,Exclude new ATS,none,2024/runs/m2/proj,comparison,https://github.com/afsc-assessments/ebs_pollock_safe/tree/41dc244ade54692282b1ac530b76757d4687fd37/2024/runs/m2
+m3,data_withholding,m2 additionally excluding new AVO biomass data,m2,Exclude new AVO,none,2024/runs/m3/proj,comparison,https://github.com/afsc-assessments/ebs_pollock_safe/tree/41dc244ade54692282b1ac530b76757d4687fd37/2024/runs/m3
+m23-retro,retrospective,Retrospective analyses for Model 23,m23,Terminal-year peels,none,not_applicable,diagnostic,https://github.com/afsc-assessments/ebs_pollock_safe/tree/41dc244ade54692282b1ac530b76757d4687fd37/2024/runs/m23/retro
+m23-prof,profile,Likelihood profile workflow for Model 23,m23,none,Profile configuration,not_applicable,diagnostic,https://github.com/afsc-assessments/ebs_pollock_safe/tree/41dc244ade54692282b1ac530b76757d4687fd37/2024/runs/m23/prof
+m23-mcmc,mcmc,MCMC workflow for Model 23,m23,none,MCMC configuration,not_applicable,diagnostic,https://github.com/afsc-assessments/ebs_pollock_safe/tree/41dc244ade54692282b1ac530b76757d4687fd37/2024/runs/m23/mcmc
+
