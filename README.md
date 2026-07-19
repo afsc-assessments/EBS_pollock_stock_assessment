@@ -23,6 +23,16 @@ The [2026 dashboard](assessment-years/2026/dashboard.qmd) is generated directly
 from the annual CSV records and summarizes schedule, data readiness, bridge
 progress, open decisions, and deliverable status.
 
+For local data entry, run:
+
+```sh
+Rscript tools/data-entry/run.R
+```
+
+The [local editor](tools/data-entry/README.md) updates those CSV records,
+validates them before saving, and remains separate from the read-only GitHub
+Pages site.
+
 ## What this example demonstrates
 
 - an assessment-year directory rather than a year in the repository name;
@@ -52,6 +62,7 @@ assessment-years/2024/
   deliverables.csv         final documents and machine-readable products
 index.qmd                  website homepage and compact annual summary
 scripts/                   validation and workflow entry points
+tools/data-entry/          local-only editor for the 2026 tracking records
 ```
 
 ## Quick check

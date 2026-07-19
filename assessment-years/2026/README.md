@@ -7,6 +7,16 @@ model or management-advice year.
 The `dashboard.qmd` page reads the annual CSV files at render time. Update the
 manifests rather than editing dashboard values manually.
 
+The local data-entry app provides a safer interface for those updates:
+
+```sh
+Rscript tools/data-entry/run.R
+```
+
+It validates records before saving and creates ignored local backups. The app
+does not run on GitHub Pages; only the rendered, read-only dashboard is
+published.
+
 ## Bridge sequence
 
 1. Reproduce the accepted 2024 Model 23 assessment from its frozen inputs.
